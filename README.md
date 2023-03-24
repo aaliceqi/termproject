@@ -1,4 +1,2 @@
 # termproject
-Team Members: 
-Alice Qi
-Caitlin Caron
+Team Members: Alice Qi, Caitlin Caron
