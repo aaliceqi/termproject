@@ -3,7 +3,7 @@
 This project creates a bot to generate a list of recipes based off of the ingredients that you have in your fridge. The bot acts as a cooking assistance who guides you to what you are cooking for your next meal. If successful, the goal of this project is to help users decrease food waste and to bring in more variety in their day to day meals. The ability to return a list of recipes from a list of ingredients is my minimun viable product. However, if time allows, I hope to include preferences in macronutrient intakes (%Carbs, %Fat, %Protein) to create a weekly meal plan for the user, which would include Breakfast, Lunch, and Dinner. 
 
 ## Learning Objectives
-My goal for this project is to further my studies with utizling APIs. 
+My goal for this project is to further my studies with utizling APIs. I think that this project will be great practice for that. 
 
 ## Implementaion Plan
 Currently, I am utizling the Spoonacular API to pull recipes and ingredient lists. However, I still need to do more research on recipe APIs to find the best match for my project's objective. 
