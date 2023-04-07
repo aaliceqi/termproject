@@ -1,6 +1,6 @@
 # Project Proposal
 ## The Big Idea
-This project creates a bot to generate a list of recipes based off of the ingredients that you have in your fridge. The bot acts as a cooking assistance who guides you to what you are cooking for your next meal. If successful, the goal of this project is to help users decrease food waste and to bring in more variety in their day to day meals. The ability to return a list of recipes from a list of ingredients is my minimun viable product. However, if time allows, I hope to include preferences in macronutrient intakes (%Carbs, %Fat, %Protein) to create a weekly meal plan for the user, which would include Breakfast, Lunch, and Dinner. 
+This project creates a bot to generate a list of recipes based off of the ingredients that you have in your fridge. The bot acts as a cooking assistance who guides you to what you are cooking for your next meal. If successful, the goal of this project is to help users decrease food waste and to bring in more variety in their day to day meals. The ability to return a list of recipes from a list of ingredients is my minimum viable product. However, if time allows, I hope to include preferences in macronutrient intakes (%Carbs, %Fat, %Protein) to create a weekly meal plan for the user, which would include Breakfast, Lunch, and Dinner. 
 
 ## Learning Objectives
 My goal for this project is to further my studies with utizling APIs. I think that this project will be great practice for that. 
@@ -27,10 +27,10 @@ week 3
 4/29: Project Due Date
 
 ## Collaborative Plan 
-I plan to work on this individually. However, I may ask other peope for their opinions to improve my project. 
+I plan to work on this individually. However, I may ask other people for their opinions to improve my project. 
 
 ## Risks and Limitations
-My greatest limitation is the API at this moment. The API that I found only allows 150 requests per week. This creates a huge limitation on the amount of tests that I can have.
+My greatest limitation is the API at this moment. The API that I found only allows 150 requests per week. This creates a huge limitation on the amount of tests that I can have. Furthermore, I want to be able to have access to high quality recipes, but that would depend on the API that I use and gaining access to a suitable recipe database is difficult. Furthermore, there may be technical limitations that may affect the accuracy of the recommendations or limit the functionality of the application. 
 
 ## Additional Course Content
-What topics do you believe will be beneficial to your project?
+I think Natural Language Processing (NLP)  will be useful in developing a bot that can understand user input, extract ingredients from their messages, and generate recipe recommendations based on those ingredients. Also understanding the nutritional content of various ingredients and recipes will be crucial in creating a personalized meal plan based on user preferences. I will need to have a deep understanding of macronutrient requirements and how to calculate them based on the user's preferences. Also Web Development and Design will be useful for the final product. 
