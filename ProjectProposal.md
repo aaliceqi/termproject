@@ -16,14 +16,23 @@ PART 3: To generate a meal plan, I plan to use random to randomly select from th
 
 ## Project Schedule
 As of right now, I have 3 weeks for this project:
+
 This weekend (4/6-4/8): find fitting API/ familarize myself with the data
+
 week 1 
+
 4/9-4/15: execution of part 1 of the plan. (generate a list of recipes based off of user's ingredients)
+
 week 2 
+
 4/16- 4/22: execution of part 2 of the plan. (generate a list of recipes based off of user's ingredients + macro nutrients needs)
+
 week 3 
+
 4/23 - 4/26: execution of part 3 of the plan. (organize the list of recipes to a meal plan schedule)
+
 4/26 - 4/28: website design + final details
+
 4/29: Project Due Date
 
 ## Collaborative Plan 
