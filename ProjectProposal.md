@@ -43,3 +43,6 @@ My greatest limitation is the API at this moment. The API that I found only allo
 
 ## Additional Course Content
 I think Natural Language Processing (NLP)  will be useful in developing a bot that can understand user input, extract ingredients from their messages, and generate recipe recommendations based on those ingredients. Also understanding the nutritional content of various ingredients and recipes will be crucial in creating a personalized meal plan based on user preferences. I will need to have a deep understanding of macronutrient requirements and how to calculate them based on the user's preferences. Also Web Development and Design will be useful for the final product. 
+
+
+
