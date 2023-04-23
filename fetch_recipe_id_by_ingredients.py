@@ -19,7 +19,7 @@ def read_data(url):
     return response_list
 
 
-def lookup_recipe_id(response_list):
+def lookup_recipe_id(response_list=list):
 #return lists of recipe_id, recipe_name, and used_incredients_count
     recipe_id = [int(i["id"]) for i in response_list]
     # print(recipe_id)
