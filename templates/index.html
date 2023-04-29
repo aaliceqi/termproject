@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Find Your Recipe!</title>
     <style>
-      body {
-      }
+     
       h1 {
         text-align: center;
         font-size: 16pt;
@@ -16,6 +15,9 @@
         border: 1px solid gray;
         padding: 10px;
         text-align: center;
+      }
+      label{
+        padding:0px 50px 50px 0px 
       }
       img {
         width: 100%;
@@ -28,9 +30,12 @@
   <body>
     <h1>What's in your fridge?</h1>
     <form id="form" action="" method="post">
-      <label for="">The Ingredients: <input type="text" name="ingredient" /></label>
+      <label for="">The Ingredients: <input type="text" name="ingredient" value="Please enter the leftover ingredients in your fridge. " /></label>
+      <label for=""># of Recipes: <input type="text" name="num_return" value="Please enter the amount of Recipes you want to see. "></label>
       <br>
       <button type="submit">Search Recipes</button>
     </form>
+    <img src="projectwebsite/images/fridge.jpg">
+
   </body>
 </html>

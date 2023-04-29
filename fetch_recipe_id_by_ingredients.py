@@ -19,22 +19,35 @@ def read_data(url):
     return response_list
 
 
-def lookup_recipe_id(response_list=list):
-#return lists of recipe_id, recipe_name, and used_incredients_count
-    recipe_id = [int(i["id"]) for i in response_list]
-    # print(recipe_id)
-    recipe_name =[i["title"] for i in response_list]
-    # # print(recipe_name)
-    used_ingredients_count = [i["usedIngredientCount"] for i in response_list]
-    # # print(used_ingredients_count)
-    missed_ingredients_count = [i["missedIngredientCount"] for i in response_list]
-    #turning the information above to a dictionary under the recipe name key
-    recipe_num_list=[]
-    for num in range(5):
-        r_num=f'recipe {num+1}'
-        recipe_num_list.append(r_num)
-    output_dict = {a:[b,c,d,e] for a,b,c,d,e in zip(recipe_num_list,recipe_name, recipe_id, used_ingredients_count, missed_ingredients_count)}
-    return recipe_id
+def lookup_recipe_id(response_list):
+    recipe_id_list = [] 
+    for recipe in response_list:
+        missed_ingredients = [ingredient["name"] for ingredient in recipe["missedIngredients"]]
+        unused_ingredients = [ingredient["name"] for ingredient in recipe["unusedIngredients"]]
+        recipe_id = {
+            "id" : recipe["id"],
+            "missing ingredients": missed_ingredients,
+            "unused ingredients": unused_ingredients
+        }
+        recipe_id_list.append(recipe_id)
+    return recipe_id_list
+# #return lists of recipe_id, recipe_name, and used_incredients_count
+#     if not all(isinstance(item, dict) for item in response_list):
+#         raise TypeError("ALl items in response_list must be dictionaries")
+#     recipe_id = [i["id"] for i in response_list]
+#     # print(recipe_id)
+#     recipe_name =[i["title"] for i in response_list]
+#     # # print(recipe_name)
+#     used_ingredients_count = [i["usedIngredientCount"] for i in response_list]
+#     # # print(used_ingredients_count)
+#     missed_ingredients_count = [i["missedIngredientCount"] for i in response_list]
+#     #turning the information above to a dictionary under the recipe name key
+#     recipe_num_list=[]
+#     for num in range(5):
+#         r_num=f'recipe {num+1}'
+#         recipe_num_list.append(r_num)
+#     output_dict = {a:[b,c,d,e] for a,b,c,d,e in zip(recipe_num_list,recipe_name, recipe_id, used_ingredients_count, missed_ingredients_count)}
+#     # return recipe_id
 
 def main():
     ingredients = "chicken, celery, apple"
@@ -45,7 +58,8 @@ def main():
     data = read_data(url)
     recipe_info = lookup_recipe_id(data)
     return recipe_info
+    # return data
 
-pprint.pprint(main())
+# pprint.pprint(main())
 
 

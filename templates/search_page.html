@@ -1,20 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Your Recipes!</title>
-</head>
-<body>
-    <h1>Your Results:</h1>
-    <p>
-      The closest station to {{location_name}} is stop
-      <strong>{{station_0}}</strong> located at {{station_2}} and it is
-      <strong>{{station_1}}</strong>.
-    </p>
-    <p id="map">Click below to open this location in Google Maps:</p>
-    <div>{{html_map | safe}}</div>
-    
-</body>
+    <style>
+      h1 {
+        text-align: center;
+        font-size: 16pt;
+      }
+      form {
+        border: 1px solid gray;
+        padding: 10px;
+        text-align: center;
+      }
+      img {
+        width: 100%;
+      }
+      br {
+        padding: 10px;
+      }
+
+      table,
+     th, tr,
+      td {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <h1>
+      Your Results
+    </h1>
+    <form id="form" action="" method="post">
+      <label for="">The Ingredients: <input type="text" name="ingredient" value="{{ingredient}}"/></label>
+      <label for=""># of Recipes: <input type="text" name="num_return" value="{{num_return}}"/></label>
+    </form>
+    <table>
+      <tr>
+        <th>Recipe Name</th>
+        <th>Missing Ingredients</th>
+        <th>Not Used Ingredients</th>
+      </tr>
+      {% for recipe in recipes %}
+      <tr>
+        <td><a href="{{recipe.url}}">{{recipe.name}}</a></td>
+        <td>{{recipe.missing}}</td>
+        <td>{{recipe.not_used}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
 </html>

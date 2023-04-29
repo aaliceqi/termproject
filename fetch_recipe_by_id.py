@@ -11,25 +11,34 @@ from fetch_recipe_id_by_ingredients import lookup_recipe_id
 APIKEY = Spoon_API
 # id = 633547
 id_list = main() #this contains a list of ids
-print(id_list)
+# print(id_list)
 
-def fetch_recipe_url(id):
-    recipe_url=[]
-    for id in id_list:
+def fetch_recipe_info(recipe_ids):
+   
+    recipe_info_list=[]
+    for recipe in recipe_ids:
+        id = recipe['id']
         url =f"https://api.spoonacular.com/recipes/{id}/information?apiKey={APIKEY}"
         response = (read_data(url))
-        recipe_link = response["sourceUrl"]
-        recipe_url.append((id, recipe_link))
-    return recipe_url   
+        recipe_info={
+            "name" : response["title"],
+            "url" : response["sourceUrl"],
+            "missing" : recipe["missing ingredients"],
+            "not_used" : recipe["unused ingredients"]
+        }
+        recipe_info_list.append(recipe_info)
+    return recipe_info_list
 
-def fetch_recipe_url_by_ingredients(ingredient):
-    num_return = 5
+def fetch_recipe_info_by_ingredients(ingredient, num_return):
     ranking = 1
+    ingredient = ingredient.replace(', ', '%2C+')
     url = load_data(ingredient, num_return, ranking)
     response = read_data(url)
-    id = lookup_recipe_id(response)
-    recipe_url = lookup_recipe_id(id)
-    return recipe_url
+    recipe_ids = lookup_recipe_id(response)
+    recipe_info = fetch_recipe_info(recipe_ids)
+    return recipe_info
 
-print(fetch_recipe_url(id_list))
+
+# pprint.pprint(fetch_recipe_info_by_ingredients("chicken, celery, apple"))
+# pprint.pprint(fetch_recipe_info(id_list))
 #now i would like to figure out how to take the list of generated recipe ids & run it through the url to generate the corresponding url to the recipe id

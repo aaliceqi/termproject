@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from fetch_recipe_by_id import fetch_recipe_url_by_ingredients
+from fetch_recipe_by_id import fetch_recipe_info_by_ingredients
 
 app = Flask(__name__)
 
@@ -14,8 +14,9 @@ def findrecipe_get():
 @app.post('/findrecipe')
 def findrecipe_post():
     ingredient = request.form.get('ingredient')
-    url = fetch_recipe_url_by_ingredients(ingredient.replace(', ', '%2C+'))
-    return render_template('result.html', recipe_url = url)    
+    num_return = request.form.get('num_return')
+    info = fetch_recipe_info_by_ingredients(ingredient.replace(', ', '%2C+'),num_return)
+    return render_template('search_page.html', recipes = info,ingredient=ingredient)    
 
 if __name__ == '__main__':
     app.run(debug=True)

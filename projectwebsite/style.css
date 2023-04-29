@@ -1,0 +1,42 @@
+body{
+    font-family:"Roboto Condensed",Georgia;
+    background-color: white;
+    }
+    
+    
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(1, 1, 38);
+    }
+
+li {
+    float:left;
+    font-size: 12pt;
+    }
+   
+li a{
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    }
+
+li a:hover {
+            background-color: white;
+            color: rgb(1, 1, 38);
+          }
+ 
+h1{
+    text-align: center;
+}
+
+.center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
