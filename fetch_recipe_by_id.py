@@ -20,8 +20,10 @@ def fetch_recipe_info(recipe_ids):
         id = recipe['id']
         url =f"https://api.spoonacular.com/recipes/{id}/information?apiKey={APIKEY}"
         response = (read_data(url))
+        # pprint.pprint(response)
         recipe_info={
             "name" : response["title"],
+            "img" : response["image"],
             "url" : response["sourceUrl"],
             "missing" : recipe["missing ingredients"],
             "not_used" : recipe["unused ingredients"]

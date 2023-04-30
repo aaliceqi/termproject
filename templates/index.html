@@ -5,37 +5,81 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Find Your Recipe!</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sigmar">
+
     <style>
-     
-      h1 {
-        text-align: center;
-        font-size: 16pt;
+      body {
+        background-color:#f3d4b9;
+        color: white;
+      }
+      .container {
+        max-width: 100%;
+        height: 100vh;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
       form {
-        border: 1px solid gray;
-        padding: 10px;
-        text-align: center;
+        width: 50%;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: column wrap;
+        border: 5px#DAAD86 solid;
+        background-color: #659dbd;
+        /* #FBEEC1*/
+        /* #8D8741 */
+        /*   #BC986A*/
+        /*  */
+        /*  */
       }
-      label{
-        padding:0px 50px 50px 0px 
+      h1{
+        font-family: "Sigmar", sans-serif;
+        color: #2487c0;
+        text-shadow: 1px 1px 1px  white
+      }
+      h2 {
+        font-size: 16pt;
+        padding-bottom: 50px;
+        color: white;
+       
+      }
+      label {
+        padding: 0px 10px 10px 10px;
+      }
+      input{
+        border-color: #DAAD86
       }
       img {
         width: 100%;
       }
-      br{
-        padding:10px;
+      button {
+        background-color: white;
+        border-color: #daad86;
+        color: #bc986a;
+      }
+      .button{
+        padding-top: 50px;
       }
     </style>
   </head>
   <body>
-    <h1>What's in your fridge?</h1>
-    <form id="form" action="" method="post">
-      <label for="">The Ingredients: <input type="text" name="ingredient" value="Please enter the leftover ingredients in your fridge. " /></label>
-      <label for=""># of Recipes: <input type="text" name="num_return" value="Please enter the amount of Recipes you want to see. "></label>
-      <br>
-      <button type="submit">Search Recipes</button>
-    </form>
-    <img src="projectwebsite/images/fridge.jpg">
-
+    <div class="container">
+      <form id="form" action="" method="post">
+        <h1>Reach</h1>
+        <h2>What's in Your Fridge?</h2>
+        <label for=""
+          >The Ingredients: <input type="text" name="ingredient"
+        /></label>
+        <label for=""
+          ># of Recipes: <input type="text" name="num_return"
+        /></label>
+        <div class="button">
+          <button type="submit">Search Recipes</button>
+        </div>
+      </form>
+    </div>
   </body>
 </html>

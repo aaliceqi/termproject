@@ -5,53 +5,119 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Your Recipes!</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Sigmar"
+    />
     <style>
-      h1 {
-        text-align: center;
-        font-size: 16pt;
+      body {
+        background-color: #f3d4b9;
+        color: white;
+      }
+      .container {
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+       
+        margin: auto;
+
+        justify-content: center;
+        align-items: center;
       }
       form {
-        border: 1px solid gray;
-        padding: 10px;
-        text-align: center;
+        width: 70%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: column wrap;
+        /* border: 5px#DAAD86 solid; */
+        background-color: #659dbd;
+    
+
+        /* #FBEEC1*/
+        /* #8D8741 */
+        /*   #BC986A*/
+        /*  */
+        /*  */
+      }
+      h1 {
+        font-family: "Sigmar", sans-serif;
+        color: #2487c0;
+        text-shadow: 1px 1px 1px white;
+      }
+      h2 {
+        font-size: 16pt;
+        color: white;
+      }
+      label {
+        padding: 0px 10px 10px 40px;
+      }
+      input {
+        border-color: #daad86;
       }
       img {
         width: 100%;
       }
-      br {
-        padding: 10px;
-      }
 
-      table,
-     th, tr,
+      table {
+        padding: 20px 20px 20px 20px;
+        width: 70%;
+        border-collapse: collapse;
+        background-color: #659dbd;
+        /* align-items: center;
+        justify-content: center;
+        flex-flow: column wrap; */
+      }
+      th,
+      tr,
       td {
-        border: 1px solid black;
+        border: 2px solid #2487c0;
+        padding: 10px 10px 10px 10px;
+      }
+      a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      a:hover {
+        color: #daad86;
       }
     </style>
   </head>
 
   <body>
+    <div class="container">
+      <form id="form" action="" method="post">
+        <h1>Reach</h1>
+        <h2>Your Results</h2>
 
-    <h1>
-      Your Results
-    </h1>
-    <form id="form" action="" method="post">
-      <label for="">The Ingredients: <input type="text" name="ingredient" value="{{ingredient}}"/></label>
-      <label for=""># of Recipes: <input type="text" name="num_return" value="{{num_return}}"/></label>
-    </form>
-    <table>
-      <tr>
-        <th>Recipe Name</th>
-        <th>Missing Ingredients</th>
-        <th>Not Used Ingredients</th>
-      </tr>
-      {% for recipe in recipes %}
-      <tr>
-        <td><a href="{{recipe.url}}">{{recipe.name}}</a></td>
-        <td>{{recipe.missing}}</td>
-        <td>{{recipe.not_used}}</td>
-      </tr>
-      {% endfor %}
-    </table>
+        <label for=""
+          >The Ingredients:
+          <input type="text" name="ingredient" value="{{ingredient}}"
+        /></label>
+        <!-- <label for=""
+          ># of Recipes:
+          <input type="text" name="num_return" value="{{num_return}}"
+        /></label> -->
+      </form>
+      <table>
+        <tr>
+          <th>Recipe Name</th>
+          <th>Image</th>
+          <th>Missing Ingredients</th>
+          <th>Not Used Ingredients</th>
+        </tr>
+        {% for recipe in recipes %}
+        <tr>
+          <td><a href="{{recipe.url}}">{{recipe.name}}</a></td>
+          <td><img src="{{recipe.img}}" /></td>
+          <td>{{recipe.missing}}</td>
+          <td>{{recipe.not_used}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
   </body>
 </html>
