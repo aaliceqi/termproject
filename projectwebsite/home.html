@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* Set height of body and the document to 100% to enable "full page tabs" */
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+        font-family: Arial;
+      }
+
+      /* Style tab links */
+      .tablink {
+        background-color: #f3d4b9;
+        color: black;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        font-size: 17px;
+        width: 20%;
+      }
+
+      .tablink:hover {
+        background-color: #f3d4b9;
+      }
+
+      /* Style the tab content (and add height:100% for full page content) */
+      .tabcontent {
+        color: white;
+        display: grid;
+        padding: 100px 20px;
+        height: 100%;
+        display: grid;
+        grid-template-areas: 
+        'header header'
+        'step1ins' 'step1img'
+        'step2ins' 'step2img';
+      }
+      table {
+        width: 50%;
+      }
+      img {
+        width: 100%;
+      }
+
+      #Home {
+        background-color: #8d8741;
+      }
+      #News {
+        background-color: #659dbd;
+      }
+      #HowTo {
+        background-color: #bc986a;
+        display: grid;
+        grid-template-areas: 
+        'header header'
+        'step1ins' 'step1img'
+        'step2ins' 'step2img';
+      }
+      .title{
+        grid-area: header;
+      }
+      .step1ins{
+        grid-area: step1ins;
+      }
+      .step1img{
+        grid-area:step1img;
+      }
+      .step2ins{
+        grid-area: step2ins;
+      }
+      .step2img{
+        grid-area: step2img
+      }
+
+      
+      #About {
+        background-color: #8d8741;
+      }
+      #Results {
+        background-color: #659dbd;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="tablink" onclick="openPage('Home', this, '#8D8741', )">
+      Home
+    </button>
+    <button class="tablink" onclick="openPage('News', this, '#659DBD')">
+      Our Mission
+    </button>
+    <button
+      class="tablink"
+      onclick="openPage('Contact', this, '#BC986A')"
+      id="defaultOpen"
+    >
+      How To
+    </button>
+    <button class="tablink" onclick="openPage('About', this, '#8D8741')">
+      Implement
+    </button>
+    <button class="tablink" onclick="openPage('Results', this, '#659DBD')">
+      Results
+    </button>
+
+    <div id="Home" class="tabcontent">
+      <h3>Reach</h3>
+      <p>Reach is where the heart is..</p>
+    </div>
+
+    <div id="News" class="tabcontent">
+      <h3>Why?</h3>
+      <p>
+        America wastes roughly 40 percent of its food. Of the estimated 125 to
+        160 billion pounds of food that goes to waste every year, much of it is
+        perfectly edible and nutritious. While a good chunk of it is caused by
+        bad weather and processing problems, a lot of it is merely food waster
+        from leftover ingredients from your fridge! Reach targets to do so, by
+        targeting those leftover ingredients one at a time. You might have
+        experienced purchasing a bulk order from Costco or leftovers from a
+        specific recipe. What are you going to do with the leftovers? Unsure
+        about what to do with them now? Reach can help you!
+      </p>
+    </div>
+
+    <div id="HowTo" class="tabcontent">
+      <h3 class="title">How Reach Works</h3>
+      <div class="step1in">
+        Step 1: Go to our website: http://127.0.0.1:5500/findrecipe
+      </div>
+      <div class="step1img"><img src="images/homepage.png" /></div>
+      <div class="step2in">
+        Step 2: Enter your leftover ingredients that you have in the fridge
+      </div>
+      <div class="step2img"><img src="images/entering_ingredients.png" /></div>
+
+    
+    </div>
+
+    <div id="About" class="tabcontent">
+      <h3>About</h3>
+      <p>Who we are and what we do.</p>
+    </div>
+
+    <div id="Results" class="tabcontent">
+      <h3>About</h3>
+      <p>Who we are and what we do.</p>
+    </div>
+
+    <script>
+      function openPage(pageName, elmnt, color) {
+        // Hide all elements with class="tabcontent" by default */
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+
+        // Remove the background color of all tablinks/buttons
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].style.backgroundColor = "";
+        }
+
+        // Show the specific tab content
+        document.getElementById(pageName).style.display = "block";
+
+        // Add the specific color to the button used to open the tab content
+        elmnt.style.backgroundColor = color;
+      }
+
+      // Get the element with id="defaultOpen" and click on it
+      document.getElementById("defaultOpen").click();
+    </script>
+  </body>
+</html>

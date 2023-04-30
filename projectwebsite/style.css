@@ -1,6 +1,6 @@
 body{
     font-family:"Roboto Condensed",Georgia;
-    background-color: white;
+    background-color:#f3d4b9;
     }
     
     
@@ -9,12 +9,16 @@ body{
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: rgb(1, 1, 38);
+    background-color: #659dbd;
     }
 
 li {
-    float:left;
+    float: left;
     font-size: 12pt;
+    width: 20%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
     }
    
 li a{
@@ -26,8 +30,9 @@ li a{
     }
 
 li a:hover {
-            background-color: white;
-            color: rgb(1, 1, 38);
+            background-color: #8d8741;
+            color: white;
+
           }
  
 h1{
@@ -40,3 +45,44 @@ h1{
     margin-right: auto;
     width: 50%;
 }
+img{
+ width:100%
+}
+
+/* CSS FOR HOW TO USE PAGE */
+.HowTo {
+    background-color: aliceblue;
+    margin:auto;
+    display: grid;
+    grid-template-areas: 
+    'header header'
+    'step1ins step1img'
+    'step2ins step2img';
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: auto auto;
+
+  }
+  .header{
+    grid-area: header;
+    text-align: center;
+  }
+  .step1ins{
+    grid-area: step1ins;
+    text-align: center;
+    width:50%;
+  }
+  .step1img{
+    grid-area:step1img;
+    width:50%;
+ 
+  }
+  .step2ins{
+    grid-area: step2ins;
+    text-align: center;
+    
+  }
+  .step2img{
+    grid-area: step2img;
+    width:50%;
+  }
